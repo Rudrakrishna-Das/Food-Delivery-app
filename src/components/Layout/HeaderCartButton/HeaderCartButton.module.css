@@ -1,0 +1,41 @@
+.cart {
+  background-color: rgb(175, 110, 25);
+  border: none;
+  padding: 0.8% 3% 0.8% 2%;
+  width: 25%;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.cart img {
+  font-size: 20px;
+}
+
+.cart .title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 5%;
+}
+.cart .number_of_items {
+  background-color: rgb(141, 81, 2);
+  margin-bottom: 1.5%;
+  padding: 5% 8% 2% 8%;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.cart:hover,
+.cart:active {
+  background-color: rgb(112, 64, 1);
+}
+
+.cart:hover .number_of_items,
+.cart:active .number_of_items {
+  background-color: rgb(94, 58, 11);
+}
