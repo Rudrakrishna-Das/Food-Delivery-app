@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "../../UI/Card";
+import MealsItems from "../MealItems/MealItems";
 
 const DUMMY_MEALS = [
   {
@@ -26,3 +28,23 @@ const DUMMY_MEALS = [
     price: 18.99,
   },
 ];
+
+const AvailableMeal = () => {
+  const mealList = DUMMY_MEALS.map((meal) => {
+    return (
+      <MealsItems
+        key={meal.id}
+        id={meal.id}
+        name={meal.name}
+        des={meal.description}
+        price={meal.price}
+      />
+    );
+  });
+  return (
+    <Card>
+      <ul>{mealList}</ul>
+    </Card>
+  );
+};
+export default AvailableMeal;

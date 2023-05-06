@@ -1,0 +1,37 @@
+.amount {
+  margin: 4% 0;
+}
+
+.amount label {
+  margin-right: 4%;
+  font-weight: 800;
+}
+
+.amount input {
+  width: 30%;
+  height: 1.5rem;
+  padding-left: 10%;
+  margin-left: 1%;
+  border: none;
+  background-color: rgba(175, 175, 175, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  transition: all 0.5s;
+}
+.amount input:hover {
+  background-color: rgb(97, 97, 97);
+  color: white;
+}
+
+@media (max-height: 500px) {
+  .amount input {
+    padding-left: 1%;
+  }
+}
+
+@media (max-width: 242px) {
+  .amount label {
+    font-size: 10px;
+  }
+}

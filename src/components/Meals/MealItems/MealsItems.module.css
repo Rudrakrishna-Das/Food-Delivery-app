@@ -1,0 +1,54 @@
+.items {
+  padding-top: 1.5%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(41, 41, 41, 0.4);
+  padding-bottom: 1.5%;
+  transition: all 0.5s;
+}
+form {
+  text-align: right;
+}
+/* ITEM DETAILS */
+.item_details h3 {
+  margin-bottom: 3%;
+}
+
+.meal_description {
+  margin-bottom: 4%;
+  font-style: italic;
+}
+.meal_price {
+  font-size: 20px;
+  font-weight: 800;
+  color: green;
+}
+
+/* INPUT & LABEL */
+.cart_amount {
+  width: 15%;
+  transition: all 0.5s;
+}
+
+@media (max-width: 1208px) {
+  .cart_amount {
+    width: 20%;
+  }
+}
+@media (max-width: 906px) {
+  .cart_amount {
+    width: 30%;
+  }
+}
+@media (max-width: 604px) {
+  .cart_amount {
+    width: 40%;
+  }
+}
+
+@media (max-width: 329px) {
+  .cart_amount {
+    width: 90%;
+  }
+}

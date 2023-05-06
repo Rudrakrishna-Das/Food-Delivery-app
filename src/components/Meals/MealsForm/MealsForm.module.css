@@ -1,0 +1,57 @@
+/* BUTTON */
+.action {
+  margin-top: 10%;
+}
+
+.action button {
+  width: 95%;
+  height: 2rem;
+  padding: 5% 5%;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(116, 23, 202);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.action button:hover {
+  background-color: rgb(72, 4, 136);
+}
+.action button:active {
+  transform: translate(0, 6px);
+}
+
+@media (max-width: 1134px) {
+  .action button {
+    padding-top: 5%;
+  }
+}
+@media (max-width: 852px) {
+  .action button {
+    padding-top: 5%;
+  }
+}
+@media (max-width: 567px) {
+  .action button {
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 310px) {
+  .action button {
+    padding-top: 5%;
+  }
+}
+@media (max-width: 242px) {
+  .action button {
+    font-size: 15px;
+  }
+}
+@media (max-width: 214px) {
+  .action button {
+    font-size: 12px;
+  }
+}

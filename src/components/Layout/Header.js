@@ -1,25 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 
 import mealsImage from "../../assets/meals.jpg";
 import classes from "./Header.module.css";
-import MealsSummary from "../Meals/MealsSummary/MealsSummary";
+import CartItems from "../Layout/CartItems/CartItems";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <React.Fragment>
       <header>
         <nav>
           <h1 className={classes.website_name}>ReactMeals</h1>
-          <HeaderCartButton />
+          <HeaderCartButton onClick={props.onOpen} />
         </nav>
 
         <img src={mealsImage} alt="table full of foods" />
       </header>
-      <main>
-        <MealsSummary />
-      </main>
     </React.Fragment>
   );
 };

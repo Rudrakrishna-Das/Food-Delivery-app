@@ -10,11 +10,11 @@
   cursor: pointer;
   transition: all 0.5s;
 }
-
-.cart img {
-  font-size: 20px;
+.icon {
+  padding-top: 0.2rem;
+  width: 2rem;
+  height: 2rem;
 }
-
 .cart .title {
   font-size: 20px;
   font-weight: 600;
@@ -22,7 +22,7 @@
 }
 .cart .number_of_items {
   background-color: rgb(141, 81, 2);
-  margin-bottom: 1.5%;
+  margin: 1.5% 0;
   padding: 5% 8% 2% 8%;
   border-radius: 15px;
   font-size: 18px;
@@ -33,9 +33,79 @@
 .cart:hover,
 .cart:active {
   background-color: rgb(112, 64, 1);
+  transform: scale(1.1);
 }
 
 .cart:hover .number_of_items,
 .cart:active .number_of_items {
   background-color: rgb(94, 58, 11);
+}
+
+@media (max-width: 1000px) {
+  .cart {
+    width: 35%;
+  }
+}
+@media (max-width: 700px) {
+  .cart {
+    width: 55%;
+    margin-left: 10%;
+  }
+}
+@media (max-width: 510px) {
+  .cart {
+    width: 85%;
+    margin-left: 4%;
+    margin-right: -5%;
+    padding-top: 2%;
+  }
+}
+@media (max-width: 363px) {
+  .cart {
+    width: 85%;
+    margin-left: 4%;
+    margin-right: -5%;
+    margin-top: 1%;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 351px) {
+  .cart {
+    padding-bottom: 11%;
+    height: 2rem;
+  }
+  .cart .icon {
+    width: 1.5rem;
+  }
+  .cart .title {
+    padding-top: 2%;
+  }
+  .cart .number_of_items {
+    width: 1.1rem;
+    height: 1.7rem;
+    margin-top: -1%;
+    padding-right: 12%;
+    padding-top: 1.7%;
+
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 256px) {
+  .cart .icon {
+    width: 1.4rem;
+    padding-top: 0%;
+  }
+  .cart .title {
+    font-size: 14px;
+  }
+
+  .cart .number_of_items {
+    margin-left: 1.5%;
+    padding-top: 3%;
+    padding-left: 0%;
+    padding-right: 0%;
+    font-size: 18px;
+  }
 }
