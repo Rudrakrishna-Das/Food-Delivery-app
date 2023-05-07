@@ -4,14 +4,20 @@ import ReactDOM from "react-dom";
 import classes from "./CartItems.module.css";
 import CartContext from "../../../store/cart-context";
 import Card from "../../UI/Card";
+import CartView from "./CartView/CartView";
+import Modal from "../../UI/Modal";
 
 const CartItems = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = cartCtx.totalAmount.toFixed(2);
-  const Overlay = (props) => {
-    return <div className={classes.overlay} onClick={props.onClose}></div>;
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, addToCartValue: 1 });
   };
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+
+  const totalAmount = cartCtx.totalAmount.toFixed(2);
 
   const CartBox = () => {
     return (
@@ -20,24 +26,17 @@ const CartItems = (props) => {
           <div className={classes.item_details}>
             <ul>
               {cartCtx.items.map((item) => {
+                console.log(item);
                 return (
-                  <li className={classes.details} key={item.id}>
-                    <div>
-                      <h2 className={classes.name}>{item.name}</h2>
-                      <div className={classes.price_qty}>
-                        <span className={classes.price}>{item.price}</span>
-                        <span className={classes.quantity}>x 1</span>
-                      </div>
-                    </div>
-                    <div className={classes.items_action}>
-                      <button>
-                        <span className={classes.decrease}>-</span>
-                      </button>
-                      <button>
-                        <span className={classes.increase}>+</span>
-                      </button>
-                    </div>
-                  </li>
+                  <CartView
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    addToCart={item.addToCartValue}
+                    price={item.price}
+                    onAdd={cartItemAddHandler.bind(null, item)}
+                    onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                  />
                 );
               })}
             </ul>
@@ -62,11 +61,9 @@ const CartItems = (props) => {
     );
   };
   return (
-    <React.Fragment>
-      ReactDOM.createPortal(
-      <Overlay />, document.getElementById("overlay")) ReactDOM.createPortal(
-      <CartBox />, document.getElementById("cart"))
-    </React.Fragment>
+    <Modal>
+      <CartBox />
+    </Modal>
   );
 };
 

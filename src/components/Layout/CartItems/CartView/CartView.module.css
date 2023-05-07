@@ -1,0 +1,115 @@
+.details {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2%;
+  border-bottom: 2px solid purple;
+  transition: all 0.6s;
+}
+
+.price_qty {
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.6s;
+}
+.name {
+  font-size: 35px;
+  margin-bottom: 4%;
+  transition: all 0.6s;
+}
+.price {
+  font-size: 25px;
+  color: green;
+  font-weight: 600;
+  transition: all 0.6s;
+}
+
+.quantity {
+  border: 1px solid rgb(71, 71, 71, 0.4);
+  margin-left: 20%;
+  border-radius: 8px;
+  padding: 2% 4%;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.6s;
+}
+
+.items_action {
+  width: 8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: all 0.6s;
+}
+
+.items_action button {
+  width: 40%;
+  height: 2.5rem;
+  margin-left: 10%;
+  font-size: 55px;
+  font-weight: 400;
+  background-color: white;
+  border: 1px solid rgb(71, 1, 150);
+  color: rgb(71, 1, 150);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.8s;
+}
+
+.items_action button:hover {
+  background-color: rgb(71, 1, 150);
+  color: white;
+}
+
+.items_action button:active {
+  transform: scale(2%);
+}
+
+.decrease {
+  position: relative;
+  top: -60%;
+  left: -1%;
+  font-size: 65px;
+}
+.increase {
+  position: relative;
+  top: -40%;
+  left: -1%;
+  font-size: 45px;
+}
+
+@media (max-width: 765px) {
+  .name {
+    font-size: 25px;
+    margin-bottom: 1%;
+  }
+  .price {
+    font-size: 15px;
+  }
+  .quantity {
+    margin-left: 8%;
+    font-size: 15px;
+  }
+
+  .items_action button {
+    width: 40%;
+    height: 1.8rem;
+  }
+  .decrease {
+    font-size: 40px;
+    top: -100%;
+  }
+  .increase {
+    font-size: 35px;
+    top: -95%;
+  }
+}
+
+@media (max-width: 241px) {
+  .increase {
+    left: -11%;
+  }
+}

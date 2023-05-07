@@ -10,7 +10,7 @@ const Meals = (props) => {
       <main>
         <MealsSummary />
       </main>
-      <AvailableMeal />;
+      <AvailableMeal />
     </React.Fragment>
   );
 };
