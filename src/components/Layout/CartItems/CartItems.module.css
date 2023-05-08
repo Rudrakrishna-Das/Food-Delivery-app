@@ -1,15 +1,7 @@
 /* OVERLAY */
 
 /* ADDED ITEMS IN CART */
-.cart_items {
-  position: relative;
-  top: 2%;
-  width: 70%;
-  margin-left: 15%;
-  z-index: 12;
-  transition: all 0.6s;
-  animation: slide-down 300ms ease-out forwards;
-}
+
 .item_details {
   max-height: 20rem;
   overflow-y: scroll;
@@ -63,11 +55,6 @@
 }
 
 @media (max-width: 765px) {
-  .cart_items {
-    width: 100%;
-    margin-left: -0.1%;
-  }
-
   .total_amount h2 {
     font-size: 18px;
   }
@@ -95,19 +82,5 @@
 @media (max-height: 460px) {
   .item_details {
     max-height: 10rem;
-  }
-  .cart_items {
-    top: -2vh;
-  }
-}
-
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

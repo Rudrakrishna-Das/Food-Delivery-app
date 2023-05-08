@@ -65,7 +65,7 @@
 }
 
 .items_action button:active {
-  transform: scale(2%);
+  transform: translate(0, 10px);
 }
 
 .decrease {
