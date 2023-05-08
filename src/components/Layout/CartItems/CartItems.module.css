@@ -24,8 +24,15 @@
   text-align: right;
   margin-top: 2%;
 }
+.close_only {
+  width: 100%;
+}
+
+.close_only:hover {
+  background-color: rgb(91, 3, 150);
+  color: white;
+}
 .amount_action button {
-  width: 20%;
   height: 3rem;
   font-size: 20px;
   margin: 1%;
@@ -33,6 +40,12 @@
   border: 2px solid rgb(91, 3, 150);
   cursor: pointer;
   transition: all 0.5s;
+}
+.close {
+  width: 20%;
+}
+.order {
+  width: 20%;
 }
 .amount_action button:active {
   transform: translate(0, 6px);
@@ -62,10 +75,12 @@
   .total_amount span {
     font-size: 20px;
   }
-
-  .amount_action button {
+  .close {
     width: 40%;
     font-size: 25px;
+  }
+  .order {
+    width: 40%;
   }
 }
 
@@ -74,8 +89,11 @@
     display: flex;
     justify-content: space-between;
   }
-  .amount_action button {
-    width: 50%;
+  .close {
+    width: 48%;
+  }
+  .order {
+    width: 48%;
   }
 }
 

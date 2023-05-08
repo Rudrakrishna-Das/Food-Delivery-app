@@ -9,11 +9,13 @@ import Order from "../../Order/Order";
 
 const CartItems = (props) => {
   const [orderIsPlaced, setOrderIsPlaced] = useState(false);
+
   const cartCtx = useContext(CartContext);
   let { items } = cartCtx;
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, addToCartValue: 1 });
   };
+
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -25,7 +27,9 @@ const CartItems = (props) => {
     setOrderIsPlaced(false);
     props.onClose();
   };
-
+  const closeButtonClass = `${
+    items.length > 0 ? classes.close : classes.close_only
+  }`;
   const totalAmount = cartCtx.totalAmount.toFixed(2);
 
   const cartItems = (
@@ -58,10 +62,10 @@ const CartItems = (props) => {
             <span>${totalAmount}</span>
           </div>
           <div className={classes.amount_action}>
-            <button className={classes.close} onClick={props.onClose}>
+            <button className={closeButtonClass} onClick={props.onClose}>
               Close
             </button>
-            {cartCtx.items.length > 0 && (
+            {items.length > 0 && (
               <button className={classes.order} onClick={orderPlaceHandler}>
                 Order
               </button>
