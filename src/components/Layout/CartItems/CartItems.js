@@ -11,6 +11,7 @@ const CartItems = (props) => {
   const [orderIsPlaced, setOrderIsPlaced] = useState(false);
 
   const cartCtx = useContext(CartContext);
+
   let { items } = cartCtx;
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, addToCartValue: 1 });
@@ -20,7 +21,7 @@ const CartItems = (props) => {
     cartCtx.removeItem(id);
   };
   const orderPlaceHandler = () => {
-    items.pop();
+    cartCtx.orderPlaced();
     setOrderIsPlaced(true);
   };
   const orderClose = () => {
