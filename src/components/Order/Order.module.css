@@ -14,6 +14,7 @@
 }
 
 .order .close {
+  cursor: pointer;
   margin-top: 5%;
   margin-bottom: 1%;
   width: 100%;
@@ -23,5 +24,38 @@
   border-radius: 8px;
   font-weight: 600;
   color: white;
-  background-color: rgb(127, 4, 228);
+  background-color: rgb(137, 29, 226);
+  transition: all 0.5s;
+}
+
+.order .close:hover {
+  background-color: rgb(73, 2, 131);
+}
+
+.order .close:active {
+  transform: translate(0, 8px);
+}
+@media (max-width: 412px) {
+  .order h1 {
+    font-size: 30px;
+  }
+  .order p {
+    margin-top: 2%;
+    font-size: 17px;
+  }
+  .order h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 412px) {
+  .order h1 {
+    font-size: 16px;
+  }
+  .order p {
+    margin-top: 2%;
+    font-size: 12px;
+  }
+  .order h3 {
+    font-size: 15px;
+  }
 }

@@ -1,19 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
-import Modal from "../../UI/Modal";
 import CartView from "./CartView/CartView";
+import Modal from "../../UI/Modal";
 import CartContext from "../../../store/cart-context";
 
 import classes from "./CartItems.module.css";
+import Order from "../../Order/Order";
 
 const CartItems = (props) => {
+  const [orderIsPlaced, setOrderIsPlaced] = useState(false);
   const cartCtx = useContext(CartContext);
-
+  let { items } = cartCtx;
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, addToCartValue: 1 });
   };
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
+  };
+  const orderPlaceHandler = () => {
+    items.pop();
+    setOrderIsPlaced(true);
+  };
+  const orderClose = () => {
+    setOrderIsPlaced(false);
+    props.onClose();
   };
 
   const totalAmount = cartCtx.totalAmount.toFixed(2);
@@ -21,7 +31,7 @@ const CartItems = (props) => {
   const cartItems = (
     <div className={classes.item_details}>
       <ul>
-        {cartCtx.items.map((item) => {
+        {items.map((item) => {
           return (
             <CartView
               key={item.id}
@@ -39,22 +49,27 @@ const CartItems = (props) => {
   );
 
   return (
-    <Modal>
-      {cartItems}
-      <div className={classes.amount}>
-        <div className={classes.total_amount}>
-          <h2>Total Amount</h2>
-          <span>${totalAmount}</span>
+    <Modal onClose={props.onClose}>
+      {!orderIsPlaced && cartItems}
+      {!orderIsPlaced && (
+        <div className={classes.amount}>
+          <div className={classes.total_amount}>
+            <h2>Total Amount</h2>
+            <span>${totalAmount}</span>
+          </div>
+          <div className={classes.amount_action}>
+            <button className={classes.close} onClick={props.onClose}>
+              Close
+            </button>
+            {cartCtx.items.length > 0 && (
+              <button className={classes.order} onClick={orderPlaceHandler}>
+                Order
+              </button>
+            )}
+          </div>
         </div>
-        <div className={classes.amount_action}>
-          <button className={classes.close} onClick={props.onClose}>
-            Close
-          </button>
-          {cartCtx.items.length > 0 && (
-            <button className={classes.order}>Order</button>
-          )}
-        </div>
-      </div>
+      )}
+      {orderIsPlaced && <Order onClick={orderClose} />}
     </Modal>
   );
 };

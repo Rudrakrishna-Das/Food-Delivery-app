@@ -3,12 +3,18 @@ import ReactDOM from "react-dom";
 import Card from "./Card";
 import classes from "./Modal.module.css";
 
-const Overlay = () => {
-  return <div className={classes.overlay} />;
+const Overlay = (props) => {
+  return <div className={classes.overlay} onClick={props.onClose} />;
 };
 const CartBox = (props) => {
+  const cartClass = `${
+    !props.children[props.children.length - 1]
+      ? classes.cart_items
+      : classes.order_cart
+  }`;
+
   return (
-    <div className={classes.cart_items}>
+    <div className={cartClass}>
       <Card>{props.children}</Card>
     </div>
   );
@@ -17,7 +23,7 @@ const Modal = (props) => {
   const parentEl = document.getElementById("overlay");
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Overlay />, parentEl)}
+      {ReactDOM.createPortal(<Overlay onClose={props.onClose} />, parentEl)}
       {ReactDOM.createPortal(<CartBox>{props.children}</CartBox>, parentEl)}
     </React.Fragment>
   );
