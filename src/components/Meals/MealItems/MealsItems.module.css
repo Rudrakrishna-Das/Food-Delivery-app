@@ -27,7 +27,7 @@ form {
 
 /* INPUT & LABEL */
 .cart_amount {
-  width: 15%;
+  width: 30%;
   transition: all 0.5s;
 }
 
