@@ -31,24 +31,26 @@ form {
   transition: all 0.5s;
 }
 
-@media (max-width: 1208px) {
-  .cart_amount {
-    width: 20%;
-  }
-}
-@media (max-width: 906px) {
-  .cart_amount {
-    width: 30%;
-  }
-}
-@media (max-width: 604px) {
+@media (max-width: 1209px) {
   .cart_amount {
     width: 40%;
+  }
+}
+@media (max-width: 907px) {
+  .cart_amount {
+    width: 50%;
+  }
+}
+@media (max-width: 685px) {
+}
+@media (max-width: 517px) {
+  .cart_amount {
+    width: 70%;
   }
 }
 
 @media (max-width: 329px) {
   .cart_amount {
-    width: 90%;
+    width: 98%;
   }
 }

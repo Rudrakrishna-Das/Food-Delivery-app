@@ -23,7 +23,7 @@ const MealsForm = (props) => {
     if (cartValue === 5) {
       setCartValue((prevValue) => prevValue - 1);
       setIncreseBtnIsDisabled(false);
-    } else if (cartValue === 1) {
+    } else if (cartValue === 2) {
       setCartValue((prevValue) => prevValue - 1);
       setDecreseBtnIsDisabled(true);
     } else {

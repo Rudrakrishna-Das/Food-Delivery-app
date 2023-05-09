@@ -50,6 +50,7 @@
   border-color: #ccc;
   color: #666666;
   cursor: not-allowed;
+  transform: translate(0, 0);
 }
 @media (max-height: 500px) {
   .amount input {
