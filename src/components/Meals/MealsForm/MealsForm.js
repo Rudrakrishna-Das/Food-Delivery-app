@@ -5,6 +5,7 @@ import classes from "./MealsForm.module.css";
 
 const MealsForm = (props) => {
   // const addToCartValue = useRef();
+
   const [cartValue, setCartValue] = useState(0);
   const [decreseBtnIsDisabled, setDecreseBtnIsDisabled] = useState(true);
   const [increseBtnIsDisabled, setIncreseBtnIsDisabled] = useState(false);
@@ -23,7 +24,7 @@ const MealsForm = (props) => {
     if (cartValue === 5) {
       setCartValue((prevValue) => prevValue - 1);
       setIncreseBtnIsDisabled(false);
-    } else if (cartValue === 2) {
+    } else if (cartValue === 1) {
       setCartValue((prevValue) => prevValue - 1);
       setDecreseBtnIsDisabled(true);
     } else {
@@ -56,7 +57,9 @@ const MealsForm = (props) => {
       />
 
       <div className={classes.action}>
-        <button type="submit">Add To Cart</button>
+        <button type="submit" disabled={cartValue === 0 ? true : false}>
+          Add To Cart
+        </button>
       </div>
     </form>
   );

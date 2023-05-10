@@ -15,7 +15,7 @@
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.6s;
 }
 .action button:hover {
   background-color: rgb(72, 4, 136);
@@ -23,7 +23,14 @@
 .action button:active {
   transform: translate(0, 6px);
 }
-
+.action button:disabled,
+.action button:hover:disabled,
+.action button:active:disabled {
+  background: rgb(94, 72, 116);
+  color: rgb(168, 168, 168);
+  cursor: not-allowed;
+  transform: translate(0, 0);
+}
 @media (max-width: 1134px) {
   .action button {
     padding-top: 2%;

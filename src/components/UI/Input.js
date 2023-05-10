@@ -25,10 +25,8 @@ const Input = React.forwardRef((props, ref) => {
 });
 */
 const Input = (props) => {
-  // const increaseButton = props
   return (
     <div className={classes.amount}>
-      {/* <label htmlFor={`amount_1`}>{props.label}</label> */}
       <button
         type="button"
         className={classes.decrease}
