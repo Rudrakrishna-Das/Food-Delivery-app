@@ -42,6 +42,9 @@ form {
   }
 }
 @media (max-width: 685px) {
+  .cart_amount {
+    width: 60%;
+  }
 }
 @media (max-width: 517px) {
   .cart_amount {
@@ -52,5 +55,11 @@ form {
 @media (max-width: 329px) {
   .cart_amount {
     width: 98%;
+  }
+}
+
+@media (max-width: 293px) {
+  .cart_amount {
+    width: 120%;
   }
 }
