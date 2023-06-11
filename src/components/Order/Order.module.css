@@ -28,6 +28,11 @@
   transition: all 0.5s;
 }
 
+.user {
+  font-weight: 600;
+  font-size: 40px;
+}
+
 .order .close:hover {
   background-color: rgb(73, 2, 131);
 }
@@ -35,7 +40,17 @@
 .order .close:active {
   transform: translate(0, 8px);
 }
-@media (max-width: 412px) {
+
+@media (max-width: 655px) {
+  .order h1 {
+    font-size: 40px;
+  }
+
+  .order h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 437px) {
   .order h1 {
     font-size: 30px;
   }
@@ -46,16 +61,19 @@
   .order h3 {
     font-size: 25px;
   }
-}
-@media (max-width: 412px) {
-  .order h1 {
-    font-size: 16px;
+
+  .user {
+    font-size: 30px;
   }
-  .order p {
-    margin-top: 2%;
-    font-size: 12px;
+}
+@media (max-width: 328px) {
+  .order h1 {
+    font-size: 20px;
   }
   .order h3 {
     font-size: 15px;
+  }
+  .user {
+    font-size: 22px;
   }
 }

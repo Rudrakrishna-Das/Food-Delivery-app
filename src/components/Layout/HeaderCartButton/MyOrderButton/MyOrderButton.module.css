@@ -1,0 +1,42 @@
+.my_order {
+  padding: 1% 0;
+  margin: 0 3%;
+  margin-top: 1%;
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: none;
+  position: relative;
+  background-color: rgb(190, 108, 0);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.my_order:hover {
+  background-color: rgb(129, 74, 2);
+  transform: scale(1.1);
+}
+
+@media (max-width: 700px) {
+  .my_order {
+    width: 40%;
+    font-size: 15px;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 636px) {
+  .my_order {
+    font-size: 14px;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 351px) {
+  .my_order {
+    margin-top: 0;
+  }
+}

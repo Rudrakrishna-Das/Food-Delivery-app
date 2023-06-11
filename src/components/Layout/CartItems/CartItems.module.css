@@ -3,10 +3,38 @@
 /* ADDED ITEMS IN CART */
 
 .item_details {
-  max-height: 20rem;
+  max-height: 14rem;
   overflow-y: scroll;
 }
+.fetch {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+.err {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  color: red;
+}
 
+.err-close {
+  cursor: pointer;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 4%;
+  padding: 1% 4%;
+  background-color: white;
+  border-color: rgb(52, 1, 100);
+  color: rgb(52, 1, 100);
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.err-close:hover {
+  background-color: rgb(52, 1, 100);
+  color: white;
+}
 /* TOTAL PRICE */
 
 .total_amount {
@@ -99,6 +127,6 @@
 
 @media (max-height: 460px) {
   .item_details {
-    max-height: 10rem;
+    max-height: 7rem;
   }
 }

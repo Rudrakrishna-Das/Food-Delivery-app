@@ -6,16 +6,17 @@ import classes from "./Modal.module.css";
 const Overlay = (props) => {
   return <div className={classes.overlay} onClick={props.onClose} />;
 };
-const CartBox = (props) => {
+const CartBox = (prop) => {
+  console.log(prop.children);
   const cartClass = `${
-    !props.children[props.children.length - 1]
+    !prop.children[prop.children.length - 1]
       ? classes.cart_items
       : classes.order_cart
   }`;
 
   return (
     <div className={cartClass}>
-      <Card>{props.children}</Card>
+      <Card>{prop.children}</Card>
     </div>
   );
 };

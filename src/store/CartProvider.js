@@ -57,7 +57,7 @@ const cartReducer = (prevState, action) => {
 
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
-
+  // RESET LOGIC
   if (action.type === "ORDER") {
     let updatedItems;
     let updatedTotalAmount;

@@ -9,9 +9,9 @@
   box-shadow: 4px 4px 14px 1px black, -4px -4px 14px 1px black;
   transition: all 0.5s;
 }
-@media (max-width: 553px) {
+/* @media (max-width: 553px) {
   .card {
     margin: 7% 2.5%;
     width: 95%;
   }
-}
+} */

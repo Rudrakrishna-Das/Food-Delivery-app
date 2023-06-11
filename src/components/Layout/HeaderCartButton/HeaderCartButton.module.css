@@ -70,8 +70,15 @@
 }
 @media (max-width: 700px) {
   .cart {
+    padding-top: 2%;
     width: 55%;
-    margin-left: 10%;
+    margin-left: 0;
+  }
+  .cart .title {
+    font-size: 15px;
+  }
+  .cart .icon {
+    width: 1.5rem;
   }
 }
 @media (max-width: 548px) {
@@ -101,6 +108,7 @@
     width: 1.5rem;
   }
   .cart .title {
+    font-size: 10px;
     padding-top: 2%;
   }
   .cart .number_of_items {
@@ -118,9 +126,6 @@
   .cart .icon {
     width: 1.4rem;
     padding-top: 0%;
-  }
-  .cart .title {
-    font-size: 14px;
   }
 
   .cart .number_of_items {

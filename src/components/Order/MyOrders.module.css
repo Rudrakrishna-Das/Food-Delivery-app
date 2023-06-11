@@ -1,0 +1,79 @@
+.order-title {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(102, 2, 102);
+  font-family: "Courier New", Courier, monospace;
+  border-bottom: 3px solid rgb(102, 2, 102, 0.2);
+}
+
+.my-orders {
+  height: 18rem;
+  overflow-y: scroll;
+}
+
+.ordered-items {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 2%;
+  padding: 2% 1%;
+  list-style: none;
+  border-bottom: 1px solid rgb(84, 85, 84, 0.2);
+}
+.name {
+  margin-bottom: 3%;
+  border-bottom: 1px solid rgba(97, 23, 1, 0.6);
+}
+.pending {
+  margin-top: 2.5%;
+  padding-top: 0.5%;
+  height: 2.5rem;
+  width: 28%;
+  border: 2px solid rgb(156, 2, 2);
+  color: rgb(207, 5, 5);
+  text-align: center;
+  font-weight: 800;
+}
+.delivered {
+  margin-top: 2.5%;
+  padding-top: 0.5%;
+  height: 2.5rem;
+  width: 28%;
+  border: 2px solid rgb(2, 156, 2);
+  color: green;
+  text-align: center;
+  font-weight: 800;
+}
+.mid {
+  margin-top: 4%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.close-my-order {
+  height: 2.5rem;
+  width: 100%;
+  border: 2px solid rgb(95, 1, 95);
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(95, 1, 95);
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.close-my-order:hover {
+  background-color: rgb(95, 1, 95);
+  color: white;
+}
+
+@media (max-width: 397px) {
+  .name h2 {
+    font-size: 18px;
+  }
+  .ordered-items p {
+    padding-top: 2.5%;
+    font-size: 11px;
+  }
+}

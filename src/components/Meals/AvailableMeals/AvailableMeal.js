@@ -1,36 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../UI/Card";
 import MealsItems from "../MealItems/MealItems";
-
-const DUMMY_MEALS = [
-  {
-    id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
-  },
-  {
-    id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
-    price: 16.5,
-  },
-  {
-    id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
-  },
-  {
-    id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
-  },
-];
+import Class from "./AvailableMeals.module.css";
 
 const AvailableMeal = () => {
-  const mealList = DUMMY_MEALS.map((meal) => {
+  const [loadedMeals, setLoadedMeals] = useState([]);
+  const [errorisPresent, setErrorIsPresent] = useState("");
+
+  const foodFetchhandler = async () => {
+    try {
+      const response = await fetch(
+        "https://food-delivery-app-5df87-default-rtdb.firebaseio.com/meals.json"
+      );
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+      const data = await response.json();
+
+      const DUMMY_MEALS = [];
+      for (const meal in data) {
+        DUMMY_MEALS.push({
+          id: meal,
+          name: data[meal].name,
+          description: data[meal].description,
+          price: data[meal].price,
+        });
+      }
+
+      setLoadedMeals(DUMMY_MEALS);
+    } catch (error) {
+      setErrorIsPresent(error.message.toUpperCase());
+    }
+  };
+
+  useEffect(() => {
+    foodFetchhandler();
+  }, []);
+
+  const mealList = loadedMeals.map((meal) => {
     return (
       <MealsItems
         key={meal.id}
@@ -41,9 +48,21 @@ const AvailableMeal = () => {
       />
     );
   });
+
+  const mealStatus = (
+    <p
+      className={`${
+        errorisPresent.trim() === ""
+          ? Class["loading-text"]
+          : Class["error-text"]
+      }`}
+    >
+      {errorisPresent.trim() === "" ? "LOADING...." : errorisPresent}
+    </p>
+  );
   return (
     <Card>
-      <ul>{mealList}</ul>
+      <ul>{loadedMeals.length === 0 ? mealStatus : mealList}</ul>
     </Card>
   );
 };

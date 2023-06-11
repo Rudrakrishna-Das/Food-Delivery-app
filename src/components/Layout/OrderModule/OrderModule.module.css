@@ -1,0 +1,141 @@
+.border {
+  margin-top: 4%;
+  padding-left: 0;
+  padding: 2% 1%;
+  border: 3px dotted black;
+  max-height: 12rem;
+  overflow: scroll;
+}
+
+.order-form {
+  height: 4rem;
+}
+
+.form-control {
+  margin-left: 5%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.position-name {
+  text-align: left;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+}
+.form-action-button {
+  margin-top: 10%;
+}
+.btn-cancel {
+  margin-top: 6%;
+  margin-right: 4%;
+  padding: 1% 2%;
+  font-size: 18px;
+  font-weight: 550;
+  border: 1px solid rgb(52, 1, 100);
+  border-radius: 8px;
+  background-color: white;
+  color: rgb(52, 1, 100);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-cancel:hover {
+  background-color: rgb(52, 1, 100);
+  color: white;
+}
+
+.btn-cancel:active {
+  transform: translate(0, 4px);
+}
+
+.btn-submit {
+  margin-top: 6%;
+  padding: 1% 2%;
+  font-size: 18px;
+  font-weight: 550;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(52, 1, 100);
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-submit:hover {
+  background-color: rgb(106, 6, 199);
+}
+.btn-submit:active {
+  transform: translate(0, 4px);
+}
+.error-text {
+  text-align: left;
+  margin-top: 2%;
+  color: red;
+  font-weight: 550;
+}
+
+.btn-submit:disabled,
+.btn-submit:hover:disabled,
+.btn-submit:active:disabled {
+  background-color: rgb(70, 70, 70);
+  color: rgb(148, 148, 148);
+  cursor: not-allowed;
+  transform: translate(0, 0);
+}
+
+.valid {
+  margin-top: 1%;
+  padding: 3% 1.5%;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(177, 121, 69);
+  font-size: 18px;
+  height: 2rem;
+  width: 100%;
+  transition: all, 0.5s;
+}
+.invalid {
+  margin-top: 1%;
+  padding: 3% 1.5%;
+  border: none;
+  border-radius: 8px;
+  background-color: red;
+  font-size: 18px;
+  height: 2rem;
+  width: 105%;
+  transition: all, 0.5s;
+}
+
+.valid:hover,
+.valid:active {
+  color: white;
+  background-color: rgb(112, 56, 3);
+}
+
+.invalid:hover,
+.invalid:active {
+  background-color: rgb(131, 2, 2);
+}
+
+.shake {
+  animation: shake 300ms ease-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-8px);
+  }
+  10% {
+    transform: translateX(8px);
+  }
+  30% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}

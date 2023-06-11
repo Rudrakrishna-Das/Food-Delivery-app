@@ -4,6 +4,7 @@ import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 
 import mealsImage from "../../assets/meals.jpg";
 import classes from "./Header.module.css";
+import MyOrderButton from "./HeaderCartButton/MyOrderButton/MyOrderButton";
 
 const Header = (props) => {
   return (
@@ -11,6 +12,7 @@ const Header = (props) => {
       <header>
         <nav>
           <h1 className={classes.website_name}>ApnaMeals</h1>
+          <MyOrderButton onClick={props.onOrderOpen} />
           <HeaderCartButton onClick={props.onOpen} />
         </nav>
 
