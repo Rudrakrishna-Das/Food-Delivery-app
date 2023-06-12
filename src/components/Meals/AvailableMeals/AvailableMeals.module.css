@@ -3,9 +3,27 @@
   font-size: 30px;
   font-weight: 600;
 }
+.meals {
+  background-color: white;
+  border: none;
+  width: 70%;
+  margin: 7% 15%;
+  padding: 1% 2%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 4px 4px 14px 1px black, -4px -4px 14px 1px black;
+  transition: all 0.5s;
+}
 .error-text {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
   color: red;
+}
+
+@media (max-width: 553px) {
+  .meals {
+    margin: 7% 2.5%;
+    width: 95%;
+  }
 }

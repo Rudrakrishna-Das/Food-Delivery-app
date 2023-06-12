@@ -27,7 +27,10 @@ function App() {
     for (const key in data) {
       for (const orders in data[key]) {
         const { order } = data[key][orders];
-        arrayOfMeal.push(order);
+        const meals = order.map((meal) => {
+          return { ...meal, user: key };
+        });
+        arrayOfMeal.push(meals);
       }
     }
     setOrderedItems(arrayOfMeal.flat());
@@ -36,7 +39,7 @@ function App() {
 
   setTimeout(() => {
     setIsDelivered(true);
-  }, 2000);
+  }, 6000);
 
   const openCart = () => {
     setCartIsOpen(true);

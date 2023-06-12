@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Modal from "../UI/Modal";
 import classes from "./MyOrders.module.css";
 // const DUMMY_MEALS = [
@@ -21,6 +20,7 @@ const MyOrder = (props) => {
           <div className={classes.name}>
             <h2>MealName ---- {meal.name}</h2>
             <h4>Total Ordered ---- {meal.addToCartValue}</h4>
+            <h4>Ordered By ---- {meal.user}</h4>
           </div>
           <h4 className={classes.price}>Total Price ---- {meal.price}$</h4>
         </div>
@@ -34,18 +34,16 @@ const MyOrder = (props) => {
   if (!isLoading && orderdItems.length > 0) content = meals;
   if (isLoading) content = <p className={classes.mid}>Loading....</p>;
   return (
-    <div className={classes.order}>
-      <Modal onClose={props.onOrderClose}>
-        <h1 className={classes["order-title"]}>My Orders</h1>
-        <ul className={classes["my-orders"]}>{content}</ul>
-        <button
-          className={classes["close-my-order"]}
-          onClick={props.onOrderClose}
-        >
-          Close
-        </button>
-      </Modal>
-    </div>
+    <Modal onClose={props.onOrderClose}>
+      <h1 className={classes["order-title"]}>My Orders</h1>
+      <ul className={classes["my-orders"]}>{content}</ul>
+      <button
+        className={classes["close-my-order"]}
+        onClick={props.onOrderClose}
+      >
+        Close
+      </button>
+    </Modal>
   );
 };
 

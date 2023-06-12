@@ -3,12 +3,12 @@
   padding-left: 0;
   padding: 2% 1%;
   border: 3px dotted black;
-  max-height: 12rem;
+  height: 12rem;
   overflow: scroll;
 }
 
 .order-form {
-  height: 4rem;
+  height: 6rem;
 }
 
 .form-control {
@@ -137,5 +137,24 @@
   }
   100% {
     transform: translateX(-8px);
+  }
+}
+
+@media (max-width: 360px) {
+  .details_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-action-button {
+    margin-top: 25%;
+  }
+}
+@media (max-height: 320px) {
+  .border {
+    height: 7.5rem;
+  }
+  .form-action-button {
+    margin-top: 5%;
   }
 }

@@ -7,7 +7,6 @@ const Overlay = (props) => {
   return <div className={classes.overlay} onClick={props.onClose} />;
 };
 const CartBox = (prop) => {
-  console.log(prop.children);
   const cartClass = `${
     !prop.children[prop.children.length - 1]
       ? classes.cart_items

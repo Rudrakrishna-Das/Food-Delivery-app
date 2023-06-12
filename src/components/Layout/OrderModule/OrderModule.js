@@ -49,7 +49,7 @@ const OrderModule = (props) => {
     props.onSubmit(orderDetails);
   };
   const formCloseHandler = () => {
-    props.onOrederSubmit();
+    props.onCancel();
   };
 
   const nameErrorClass = nameHasError

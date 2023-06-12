@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../UI/Card";
 import MealsItems from "../MealItems/MealItems";
 import Class from "./AvailableMeals.module.css";
 
@@ -61,9 +60,9 @@ const AvailableMeal = () => {
     </p>
   );
   return (
-    <Card>
+    <div className={Class.meals}>
       <ul>{loadedMeals.length === 0 ? mealStatus : mealList}</ul>
-    </Card>
+    </div>
   );
 };
 export default AvailableMeal;
